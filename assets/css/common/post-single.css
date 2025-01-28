@@ -5,7 +5,8 @@
 
 .post-title {
     margin-bottom: 2px;
-    font-size: 40px;
+    font-size: 60px;
+    color: var(--title);
 }
 
 .post-description {
@@ -36,6 +37,7 @@
     color: var(--content);
 }
 
+
 .post-content h3,
 .post-content h4,
 .post-content h5,
@@ -51,6 +53,7 @@
 .post-content h2 {
     margin: 32px auto 24px;
     font-size: 32px;
+    color: var(--h2);
 }
 
 .post-content h3 {
