@@ -25,6 +25,20 @@
     {{ .Description }}
   </div>
   {{- end }}
+  
+  <!-- 这段脚本为了保证遮挡关系正常 -->
+  <script>
+    addEventListener('DOMContentLoaded',e=>{
+      let archives = document.querySelectorAll('.archive-posts');
+      for(var archive of archives){
+        var i = 0;
+        for(var entry of archive.children){
+          entry.style.setProperty('z-index',`${100-i}`);
+          ++i;
+        }
+      }
+    })
+  </script>
 </header>
 
 {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
@@ -43,7 +57,9 @@
     </a>
     <sup class="archive-count">&nbsp;{{ len .Pages }}</sup>
   </h2>
+
   {{- range .Pages.GroupByDate "January" }}
+
   <div class="archive-month">
     <h3 class="archive-month-header" id="{{ $year }}-{{ .Key }}">
       <a class="archive-header-link" href="#{{ $year }}-{{ .Key }}">
@@ -52,8 +68,10 @@
       <sup class="archive-count">&nbsp;{{ len .Pages }}</sup>
     </h3>
     <div class="archive-posts">
+
       {{- range .Pages }}
       {{- if eq .Kind "page" }}
+
       <div class="archive-entry">
         <h3 class="archive-entry-title entry-hint-parent">
           {{- .Title | markdownify }}
@@ -81,3 +99,4 @@
 {{- end }}
 
 {{- end }}{{/* end main */}}
+

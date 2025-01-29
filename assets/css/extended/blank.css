@@ -3,3 +3,72 @@ This is just a placeholder blank stylesheet so as to support adding custom style
 
 Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-css-with-themes-assets for more info
 */
+
+/* 归档页面的几何体。只在电脑端有效 */
+@media screen and (min-width: 1080px) {
+    .archive-posts {
+        margin-left: 60px;
+    }
+
+    .archive-entry {
+        position: relative;
+        display: block;
+        margin: 0;
+        border-radius: 0;
+        border: 1px solid var(--underline);
+        transform: skewY(10deg);
+        max-width: 450px;
+        transition: 0.2s ease-out;
+    }
+
+    .archive-entry:before {
+        content: "";
+        position: absolute;
+        left: 100%;
+        right: -30%;
+        bottom: 0;
+        top: 0;
+        border: 1px solid var(--underline);
+        transform-origin: left;
+        transform: skewY(-20deg);
+        z-index: -999;
+    }
+
+    .archive-entry:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 100%;
+        top: -52%;
+        transform-origin: bottom;
+        transform: skewX(-70deg);
+        border: 1px solid var(--underline);
+        z-index: -999;
+    }
+
+    .archive-entry:hover {
+        transform: skewY(10deg) translate(-40px, 15px);
+        background-color: var(--cube);
+        opacity: 0.7;
+    }
+
+    .archive-entry:hover h3{
+        color:#000;
+    }
+}
+
+.first-entry{
+    background: linear-gradient(to left,var(--underline),var(--underline)) 50% 0% no-repeat,
+    linear-gradient(to right,var(--underline),var(--underline)) 50% 0% no-repeat;
+    animation: FirstEntry 1s ease-out forwards;
+}
+
+@keyframes FirstEntry{
+    from{
+        background-size:0% 2px, 0% 2px;
+    }
+    to{
+        background-size:100% 2px, 100% 2px;
+    }
+}

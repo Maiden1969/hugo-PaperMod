@@ -20,6 +20,8 @@
     --title: #47907B;
     --h2: #4261c0;
     --underline: #333;
+    --logo: #4261c0;
+    --cube: lightgreen;
 }
 
 .dark {
@@ -35,6 +37,8 @@
     --title: lightgreen;
     --h2: lightblue;
     --underline: #eee;
+    --logo: lightgreen;
+    --cube: lightblue;
 }
 
 .list {
