@@ -3,8 +3,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     min-height: 320px;
     margin: var(--gap) 0 calc(var(--gap) * 2) 0;
+    transition: all .5s linear;
+}
+
+.first-entry:hover{
+    background-color: var(--entry);
 }
 
 .first-entry .entry-header {
@@ -21,7 +27,9 @@
 
 .first-entry .entry-content {
     margin: 14px 0;
-    font-size: 16px;
+    font-size: 20px;
+    font-weight: bold;
+    color:lightblue;
     -webkit-line-clamp: 3;
 }
 
@@ -39,8 +47,12 @@
     padding: var(--gap);
     background: var(--entry);
     border-radius: var(--radius);
-    transition: transform 0.1s;
+    transition: transform 0.5s;
     border: 1px solid var(--border);
+}
+
+.post-entry:hover{
+    transform: translateX(-40px);
 }
 
 .post-entry:active {
