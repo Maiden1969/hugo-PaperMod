@@ -53,22 +53,48 @@ Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-cs
         opacity: 0.7;
     }
 
-    .archive-entry:hover h3{
-        color:#000;
+    .archive-entry:hover h3 {
+        color: #000;
     }
 }
 
-.first-entry{
-    background: linear-gradient(to left,var(--underline),var(--underline)) 50% 0% no-repeat,
-    linear-gradient(to right,var(--underline),var(--underline)) 50% 0% no-repeat;
+/* 开始界面的置顶动画 */
+.first-entry {
+    background:
+        linear-gradient(to left, var(--underline), var(--underline)) 50% 0% no-repeat,
+        linear-gradient(to right, var(--underline), var(--underline)) 50% 0% no-repeat;
     animation: FirstEntry 1s ease-out forwards;
 }
 
-@keyframes FirstEntry{
-    from{
-        background-size:0% 2px, 0% 2px;
+@keyframes FirstEntry {
+    from {
+        background-size:
+            0% 2px,
+            0% 2px;
     }
-    to{
-        background-size:100% 2px, 100% 2px;
+    to {
+        background-size:
+            100% 2px,
+            100% 2px;
     }
+}
+
+/* Categories的按钮样式 */
+.terms-tags li {
+    position: relative;
+    transition: .2s ease-out;
+}
+
+.terms-tags li:hover{
+    transform: translateY(-7px);
+    
+}
+
+.terms-tags li a{
+    transition: .2s ease-out;
+}
+
+.terms-tags li:hover a{
+    background-color: var(--li);
+    color: #333;
 }

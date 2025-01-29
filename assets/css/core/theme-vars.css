@@ -22,6 +22,8 @@
     --underline: #333;
     --logo: #4261c0;
     --cube: lightgreen;
+    --li: lightblue;
+    --entryshadow: lightblue;
 }
 
 .dark {
@@ -39,6 +41,8 @@
     --underline: #eee;
     --logo: lightgreen;
     --cube: lightblue;
+    --li: lightgreen;
+    --entryshadow: lightgreen;
 }
 
 .list {
