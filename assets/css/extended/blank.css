@@ -82,38 +82,44 @@ Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-cs
 /* Categories和Tags的按钮样式 */
 .terms-tags li {
     position: relative;
-    transition: .2s ease-out;
+    transition: 0.2s ease-out;
 }
 
-.terms-tags li:before{
-    content: '';
+.terms-tags li:before {
+    content: "";
     position: absolute;
-    left: 0;right: 0;top: 0;bottom: -15%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: -15%;
     /* background-color: var(--tertiary); */
     background-color: var(--underline);
     border-radius: var(--radius);
-    z-index:-1;
+    z-index: -1;
 }
 
-/* .terms-tags li:before:hover{
-    transform: translateY(7px);
-}  */
-
-
- /* .terms-tags li:hover{
-    transform: translateY(-7px);    
-} */
-
-
-.terms-tags li a{
-    transition: .2s ease-out;
+.terms-tags li a {
+    transition: 0.2s ease-out;
 }
 
-.terms-tags li:hover a{
+.terms-tags li:hover a {
     background-color: var(--li);
     color: #333;
 }
 
-.terms-tags li a:active{
+.terms-tags li a:active {
     height: 120%;
+}
+
+/* 网格背景 */
+body:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 200%;
+    background: linear-gradient(transparent 98%, var(--underline) 98%), linear-gradient(90deg, transparent 98%, var(--underline) 98%);
+    background-size: 50px 50px;
+    mask: linear-gradient(-45deg,transparent 20%, #fff 100%);
+    opacity: 0.08;
+    pointer-events: none;
 }
