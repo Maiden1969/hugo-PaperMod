@@ -79,16 +79,31 @@ Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-cs
     }
 }
 
-/* Categories的按钮样式 */
+/* Categories和Tags的按钮样式 */
 .terms-tags li {
     position: relative;
     transition: .2s ease-out;
 }
 
-.terms-tags li:hover{
-    transform: translateY(-7px);
-    
+.terms-tags li:before{
+    content: '';
+    position: absolute;
+    left: 0;right: 0;top: 0;bottom: -15%;
+    /* background-color: var(--tertiary); */
+    background-color: var(--underline);
+    border-radius: var(--radius);
+    z-index:-1;
 }
+
+/* .terms-tags li:before:hover{
+    transform: translateY(7px);
+}  */
+
+
+ /* .terms-tags li:hover{
+    transform: translateY(-7px);    
+} */
+
 
 .terms-tags li a{
     transition: .2s ease-out;
@@ -97,4 +112,8 @@ Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-cs
 .terms-tags li:hover a{
     background-color: var(--li);
     color: #333;
+}
+
+.terms-tags li a:active{
+    height: 120%;
 }
