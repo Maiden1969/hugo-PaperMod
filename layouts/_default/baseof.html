@@ -8,7 +8,7 @@
 <head>
     {{- partial "head.html" . }}
     {{ if .Param "math" }}
-    {{ partial "mathjax.html" . }}
+    {{ partialCached "mathjax.html" . }}
     {{ end }}
 </head>
 
