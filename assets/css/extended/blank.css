@@ -56,6 +56,10 @@ Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-cs
     .archive-entry:hover h3 {
         color: #000;
     }
+
+    .archive-month {
+        margin-bottom: 50px;
+    }
 }
 
 /* 开始界面的置顶动画 */
@@ -173,11 +177,127 @@ Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-cs
     position: relative;
 }
 
-.not-found:before{
-    content:'没有找到此页面 ╥﹏╥';
+.not-found:before {
+    content: "没有找到此页面 ╥﹏╥";
     position: absolute;
-    top:110%;
+    top: 110%;
     width: max-content;
     height: max-content;
     font-size: 2rem;
 }
+
+/* 分类页面的正方体 */
+.cube-container {
+    perspective: 1000;
+    perspective-origin: 50% 50%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    height: 300px;
+    visibility: visible;
+    pointer-events:none;
+}
+
+.cube {
+    transform-style: preserve-3d;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: all 2s ease-out forwards;
+    transform: rotate3d(1, 0, 0, 15deg) rotate3d(0, 1, 0, 15deg) rotate3d(0, 0, 1, 15deg);
+    visibility: visible;
+    pointer-events:none;
+}
+
+.plane {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--underline);
+    font-size: 1.5rem;
+    padding: 10px;
+    font-weight: bold;
+    inset: 0;
+    margin: auto;
+    width: 300px;
+    height: 300px;
+    border: 2px solid var(--underline);
+    background-color: var(--theme);
+    visibility: visible;
+    pointer-events:none;
+}
+
+/* 前 */
+.plane-1 {
+    transform: translateZ(150px);
+}
+
+/* 后 */
+.plane-2 {
+    transform: rotateY(180deg) translateZ(150px);
+}
+
+/* 左 */
+.plane-3 {
+    transform: rotateY(-90deg) translateZ(150px);
+}
+
+/* 右 */
+.plane-4 {
+    transform: rotateY(90deg) translateZ(150px);
+}
+
+/* 上 */
+.plane-5 {
+    transform: rotateX(90deg) translateZ(150px);
+}
+
+/* 下 */
+.plane-6 {
+    transform: rotateX(-90deg) translateZ(150px);
+}
+
+@media screen and (max-width: 1000px){
+    .cube-container {
+        display: none;
+    }
+    .cube{
+        display: none;
+    }
+    .plane{
+        display: none;
+    }
+}
+
+/* Categories标签的特殊样式 */
+.category-tags{
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    width: 100%;
+}
+
+.category-tags a{
+    margin: 0 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--entry);
+    width: 100px;
+    height: 100px;
+    border-radius: var(--radius);
+    transition: .5s ease-out;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.category-tags a:hover{
+    color: var(--theme);
+    box-shadow: 0px -100px 50px 100px var(--entryshadow) inset;
+}
+
+
+
+

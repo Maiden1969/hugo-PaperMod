@@ -24,4 +24,82 @@
     {{- end }}
 </ul>
 
+<!-- 炫酷的正方体 -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+<script>
+    if (window.location.toString().includes("categories")) {
+        // 移除标题Categories
+        var title = document.querySelector('.page-header')
+        title.remove()
+
+        //更换标签的样式
+        // var ul = document.querySelector('.terms-tags')
+        // ul.classList.remove('terms-tags')
+        // ul.classList.add('category-tags')
+    }
+
+    addEventListener("DOMContentLoaded", e => {
+        if (window.location.toString().includes("categories")) {
+            // 在下面配置分类
+            var categories = new Map()
+            categories.set("方法论", ["各种题型的解题方法，通法为主，奇技淫巧为辅", "rotate3d(0,1,0,180deg)"])
+            categories.set("试卷", ["本人自编的试卷，或者精选出的优质模拟卷", "rotate3d(0,1,0,-90deg)"])
+            categories.set("专题", ["针对不同专题的练习题集", "rotate3d(0,1,0,90deg)"])
+            categories.set("集萃", ["难题、趣题的集萃", "rotate3d(1,0,0,90deg)"])
+            categories.set("资料", ["本人编写的讲义、复习参考等资料", "rotate3d(1,0,0,-90deg)"])
+
+            var categories_list = []
+            categories.forEach((value, key) => {
+                categories_list.push(key)
+            })
+
+            var get_map = (text) => {
+                let res = ''
+                categories.forEach((value, key) => {
+                    if (text.includes(key))
+                        res = key
+                    return
+                })
+                return res
+            }
+
+            var cube_container = document.createElement('div')
+            cube_container.classList.add('cube-container')
+
+            var cube = document.createElement('div')
+            cube.classList.add('cube')
+
+            cube_container.appendChild(cube)
+
+            var planes = [0, 0, 0, 0, 0, 0].map(() => document.createElement('div'))
+            planes.forEach((plane, index) => {
+                plane.classList.add('plane')
+                plane.classList.add(`plane-${index + 1}`)
+                plane.textContent = (index == 0) ? "将鼠标悬浮在按钮上以获取介绍" : categories.get(categories_list[index - 1])[0]
+                cube.appendChild(plane)
+            })
+
+            var tags = document.querySelectorAll('.terms-tags li')
+
+            for (var tag of tags) {
+                tag.addEventListener('mouseenter', e => {
+                    console.log('1')
+                    gsap.to(cube, {
+                        transform: categories.get(get_map(e.target.textContent))[1],
+                        duration: 1
+                    })
+                })
+                tag.addEventListener('mouseleave',e=>{
+                    gsap.to(cube,{
+                        transform: 'rotate3d(1,0,0,15deg) rotate3d(0,1,0,15deg) rotate3d(0,0,1,15deg)',
+                        duration: 1
+                    })
+                })
+            }
+
+            document.querySelector('.main').appendChild(cube_container)
+        }
+    })
+</script>
+
 {{- end }}{{/* end main */ -}}
