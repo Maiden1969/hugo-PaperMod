@@ -24,6 +24,7 @@
     --cube: lightgreen;
     --li: lightblue;
     --entryshadow: lightblue;
+    --link: #4261c0;
 }
 
 .dark {
@@ -43,6 +44,7 @@
     --cube: lightblue;
     --li: lightgreen;
     --entryshadow: lightgreen;
+    --link: lightgreen;
 }
 
 .list {

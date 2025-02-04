@@ -299,5 +299,10 @@ Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-cs
 }
 
 
+/* 文章的链接 */
+.post-content p a{
+    color:var(--link);
+}
+
 
 
