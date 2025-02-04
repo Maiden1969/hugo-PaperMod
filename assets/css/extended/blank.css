@@ -304,5 +304,94 @@ Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-cs
     color:var(--link);
 }
 
+.next{
+    font-weight: bold;    
+    position: relative;
+    overflow: hidden;
+}
+
+.next:after{
+    content:">>";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    top:0;left: 0;bottom: 0;right: 0;
+    background-color: var(--entryshadow);
+    border-radius: inherit;
+    font-size: 1.5rem;
+    transform: translateX(-100%);
+    transition: .5s ease-out;
+    z-index: 3;
+}
+
+.next:before{
+    content:'';
+    position: absolute;
+    top:0;left: 0;bottom: 0;right: 0;
+    background-color: var(--theme);
+    z-index: 2;
+    border-radius: inherit;
+    transform: translateX(-100%);
+    transition: .3s ease-out;
+}
+
+.next:hover:after{
+    transform: translateX(0);
+}
+
+.next:hover:before{
+    transform:translateX(0);
+}
+
+/* 上一页 */
+.prev{
+    font-weight: bold;    
+    position: relative;
+    overflow: hidden;
+}
+
+.prev:after{
+    content:"<<";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    top:0;left: 0;bottom: 0;right: 0;
+    background-color: var(--entryshadow);
+    border-radius: inherit;
+    font-size: 1.5rem;
+    transform: translateX(100%);
+    transition: .5s ease-out;
+    z-index: 3;
+}
+
+.prev:before{
+    content:'';
+    position: absolute;
+    top:0;left: 0;bottom: 0;right: 0;
+    background-color: var(--theme);
+    z-index: 2;
+    border-radius: inherit;
+    transform: translateX(100%);
+    transition: .3s ease-out;
+}
+
+.prev:hover:after{
+    transform: translateX(0);
+}
+
+.prev:hover:before{
+    transform:translateX(0);
+}
+
+
+
+
+
+
+
 
 
