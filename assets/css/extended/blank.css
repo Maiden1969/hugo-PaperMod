@@ -310,6 +310,10 @@ Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-cs
     overflow: hidden;
 }
 
+.next:hover{
+    box-shadow: 0px 0px 10px 0px var(--entryshadow);
+}
+
 .next:after{
     content:">>";
     display: flex;
@@ -350,6 +354,10 @@ Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-cs
     font-weight: bold;    
     position: relative;
     overflow: hidden;
+}
+
+.prev:hover{
+    box-shadow: 0px 0px 10px 0px var(--entryshadow);
 }
 
 .prev:after{
