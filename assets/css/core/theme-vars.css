@@ -17,14 +17,14 @@
     --code-block-bg: rgb(28, 29, 33);
     --code-bg: rgb(245, 245, 245);
     --border: rgb(238, 238, 238);
-    --title: #47907B;
-    --h2: #4261c0;
+    --title: #005bff;
+    --h2: #005bff;
     --underline: #333;
-    --logo: #4261c0;
-    --cube: lightgreen;
-    --li: lightblue;
-    --entryshadow: lightblue;
-    --link: #4261c0;
+    --logo: #00b5ff;
+    --cube: #00b5ff;
+    --li: #00b5ff;
+    --entryshadow: #00b5ff;
+    --link: #00b5ff;
 }
 
 .dark {
@@ -37,14 +37,14 @@
     --code-block-bg: rgb(46, 46, 51);
     --code-bg: rgb(55, 56, 62);
     --border: rgb(51, 51, 51);
-    --title: lightgreen;
-    --h2: lightblue;
+    --title: #00ff8e;
+    --h2: #00c46e;
     --underline: #eee;
-    --logo: lightgreen;
-    --cube: lightblue;
-    --li: lightgreen;
-    --entryshadow: lightgreen;
-    --link: lightgreen;
+    --logo: #00ff8e;
+    --cube: #00ff8e;
+    --li: #00ff8e;
+    --entryshadow: #00ff8e;
+    --link: #00ff8e;
 }
 
 .list {
