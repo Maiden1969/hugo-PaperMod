@@ -304,6 +304,8 @@ Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-cs
     color:var(--link);
 }
 
+
+/* 下一页按钮 */
 .next{
     font-weight: bold;    
     position: relative;
@@ -349,7 +351,7 @@ Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-cs
     transform:translateX(0);
 }
 
-/* 上一页 */
+/* 上一页按钮 */
 .prev{
     font-weight: bold;    
     position: relative;
@@ -394,6 +396,8 @@ Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-cs
 .prev:hover:before{
     transform:translateX(0);
 }
+
+
 
 
 
