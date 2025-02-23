@@ -397,6 +397,11 @@ Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-cs
     transform:translateX(0);
 }
 
+/* 引用块 */
+blockquote{
+    background-color: var(--blockquote);
+}
+
 
 
 

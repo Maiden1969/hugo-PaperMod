@@ -25,6 +25,7 @@
     --li: #00b5ff;
     --entryshadow: #00ffef;
     --link: #00b5ff;
+    --blockquote: rgba(0,187,255,0.2)
 }
 
 .dark {
@@ -45,6 +46,7 @@
     --li: #00ff8e;
     --entryshadow: #00ff8e;
     --link: #00ff8e;
+    --blockquote: rgba(0,255,142,0.2);
 }
 
 .list {
