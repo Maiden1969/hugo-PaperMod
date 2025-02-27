@@ -306,17 +306,17 @@ Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-cs
 
 
 /* 下一页按钮 */
-.next{
+.pagination .next{
     font-weight: bold;    
     position: relative;
     overflow: hidden;
 }
 
-.next:hover{
+.pagination .next:hover{
     box-shadow: 0px 0px 10px 0px var(--entryshadow);
 }
 
-.next:after{
+.pagination .next:after{
     content:">>";
     display: flex;
     justify-content: center;
@@ -332,7 +332,7 @@ Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-cs
     z-index: 3;
 }
 
-.next:before{
+.pagination .next:before{
     content:'';
     position: absolute;
     top:0;left: 0;bottom: 0;right: 0;
@@ -343,26 +343,26 @@ Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-cs
     transition: .3s ease-out;
 }
 
-.next:hover:after{
+.pagination .next:hover:after{
     transform: translateX(0);
 }
 
-.next:hover:before{
+.pagination .next:hover:before{
     transform:translateX(0);
 }
 
 /* 上一页按钮 */
-.prev{
+.pagination .prev{
     font-weight: bold;    
     position: relative;
     overflow: hidden;
 }
 
-.prev:hover{
+.pagination .prev:hover{
     box-shadow: 0px 0px 10px 0px var(--entryshadow);
 }
 
-.prev:after{
+.pagination .prev:after{
     content:"<<";
     display: flex;
     justify-content: center;
@@ -378,7 +378,7 @@ Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-cs
     z-index: 3;
 }
 
-.prev:before{
+.pagination .prev:before{
     content:'';
     position: absolute;
     top:0;left: 0;bottom: 0;right: 0;
@@ -389,13 +389,41 @@ Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-cs
     transition: .3s ease-out;
 }
 
-.prev:hover:after{
+.pagination .prev:hover:after{
     transform: translateX(0);
 }
 
-.prev:hover:before{
+.pagination .prev:hover:before{
     transform:translateX(0);
 }
+
+@property --rotate-deg{
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: -30deg;
+}
+
+/* 标题的动画 */
+@supports (background: conic-gradient(from var(--rotate-deg) at 0% 100%,var(--theme) 30deg, var(--content) 30deg)){
+    .post-title.entry-hint-parent{
+        background: conic-gradient(from var(--rotate-deg) at 0% 100%,var(--theme) 30deg, var(--content) 30deg);
+        background-clip: text;
+        color: transparent;
+        animation: anim-rotate-color 1.5s ease-out forwards; 
+    }
+}
+
+
+@keyframes anim-rotate-color{
+    from{
+        --rotate-deg: -30deg;
+    }
+    to{
+        --rotate-deg: 95deg;
+    }
+}
+
+
 
 /* 引用块 */
 blockquote{
