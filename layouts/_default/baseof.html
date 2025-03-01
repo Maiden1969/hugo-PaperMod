@@ -16,13 +16,15 @@
 {{- if eq site.Params.defaultTheme `dark` -}}
 {{- print " dark" }}
 {{- end -}}
-" id="top">
+" id="top" data-barba="wrapper">
     {{- partialCached "header.html" . .Page -}}
     <div class="gridmask"></div>
-    <main class="main">
+    <main class="main" data-barba="container" data-barba-namespace="home">
         {{- block "main" . }}{{ end }}
     </main>
     {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}
 </body>
+
+
 
 </html>
