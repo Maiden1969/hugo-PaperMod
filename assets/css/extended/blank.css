@@ -408,6 +408,7 @@ Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-cs
     .post-title.entry-hint-parent{
         background: conic-gradient(from var(--rotate-deg) at 0% 100%,var(--theme) 30deg, var(--content) 30deg);
         background-clip: text;
+        -webkit-background-clip: text;
         color: transparent;
         animation: anim-rotate-color 1.5s ease-out forwards; 
     }
@@ -429,6 +430,8 @@ Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-cs
 blockquote{
     background-color: var(--blockquote);
 }
+
+
 
 
 

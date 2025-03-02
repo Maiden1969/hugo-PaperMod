@@ -25,6 +25,16 @@
     {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}
 </body>
 
+{{/*  menu菜单的hover动画  */}}
+<script>
+    let lis = document.querySelectorAll('#menu li')
+    lis.forEach((li,index)=>{
+        li.addEventListener('mouseenter',e=>{
+            
+        })
+    })
+</script>
+
 
 
 </html>
