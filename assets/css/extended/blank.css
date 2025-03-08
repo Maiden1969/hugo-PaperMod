@@ -117,20 +117,24 @@ Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-cs
 
 /* 网格背景 */
 /* <div class="gridmask"></div> 加到了baseof.html*/
-.gridmask {
-    display: grid;
-    position: absolute;
-    top:0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -999;
-    background: linear-gradient(transparent 98%, var(--primary) 98%),
-        linear-gradient(90deg, transparent 98%, var(--primary) 98%);
-    background-size: 50px 50px;
-    mask: linear-gradient(0deg, transparent 20%, #fff 100%);
-    opacity: 0.1;
-    pointer-events: none;
+@media screen and (min-width:1000px) {
+    .gridmask {
+        display: grid;
+        position: absolute;
+        top:0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -999;
+        background: linear-gradient(transparent 98%, var(--primary) 98%),
+            linear-gradient(90deg, transparent 98%, var(--primary) 98%);
+        background-size: 50px 50px;
+        mask: linear-gradient(0deg, transparent 50%, #fff 100%);
+        opacity: 0.1;
+        pointer-events: none;
+    }
 }
+
+
 
 /* 个人主页的头像 */
 .avatar {
@@ -415,6 +419,8 @@ Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-cs
 
 
 
+
+
 @keyframes anim-rotate-color{
     from{
         --rotate-deg: -30deg;
@@ -430,6 +436,8 @@ Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-cs
 blockquote{
     background-color: var(--blockquote);
 }
+
+ 
 
 
 
