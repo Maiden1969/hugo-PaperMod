@@ -4,6 +4,13 @@ This is just a placeholder blank stylesheet so as to support adding custom style
 Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-css-with-themes-assets for more info
 */
 
+@media screen and (max-width: 1080px){
+    header{
+        margin-top: 20px;
+    }
+}
+
+
 /* 归档页面的几何体。只在电脑端有效 */
 @media screen and (min-width: 1080px) {
     .archive-posts {
