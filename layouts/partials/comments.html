@@ -15,10 +15,12 @@
         serverURL: 'https://ustc510.asia',   
         dark: 'body.dark',
         texRenderer: (blockMode, tex) =>
-          window.MathJax.startup.adaptor.outerHTML(
-            window.MathJax.tex2svg(tex, {
-              display: blockMode,
-            }),
-          ),
+        window.MathJax.startup.adaptor.outerHTML(
+          window.MathJax.tex2svg(tex, {
+            display: blockMode,
+          }),
+        ),
     });
+
+   
 </script>
